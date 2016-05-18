@@ -144,5 +144,77 @@
         <PhraseTopic Label="speech" Scenario="Natural Language"></PhraseTopic>
 
     </CommandSet>
+        <CommandSet xml:lang="de-de" Name="2DayCommandSet_de-de">
+        <CommandPrefix> zwei tag </CommandPrefix>
+        <Example> Öffne den Arbeit Ordner </Example>
+
+        <Command Name="openFolder">
+            <Example> Öffne Arbeit Ordner </Example>
+            <ListenFor RequireAppName="BeforeOrAfterPhrase"> Öffne [den] {folder} Ordner </ListenFor>
+            <Feedback> Öffne {folder} </Feedback>
+            <Navigate />
+        </Command>
+
+        <Command Name="openView">
+            <Example> Öffne Ansicht heute</Example>
+            <ListenFor RequireAppName="BeforeOrAfterPhrase"> Öffne [die] {view} Ansicht </ListenFor>
+            <Feedback> Öffne {view} </Feedback>
+            <Navigate />
+        </Command>
+
+        <Command Name="openSmartView">
+            <Example> Öffne die Automatische Liste Wichtig </Example>
+            <ListenFor RequireAppName="BeforeOrAfterPhrase"> Öffne [die] Automatische liste {smartview} </ListenFor>
+            <Feedback> Öffne {smartview} </Feedback>
+            <Navigate />
+        </Command>
+
+        <Command Name="openContext">
+            <Example> Öffne Telefon umgebung</Example>
+            <ListenFor RequireAppName="BeforeOrAfterPhrase"> Öffne [die] {context} umgebung </ListenFor>
+            <Feedback> Öffne {context} </Feedback>
+            <Navigate />
+        </Command>
+
+        <Command Name="openTag">
+            <Example> Öffne tag</Example>
+            <ListenFor RequireAppName="BeforeOrAfterPhrase"> Öffne {tag} tag </ListenFor>
+            <Feedback> Öffne {tag} </Feedback>
+            <Navigate />
+        </Command>
+
+        <Command Name="addTask">
+            <Example> erstelle die Aufgabe Brot zu kaufen </Example>
+            <ListenFor RequireAppName="BeforeOrAfterPhrase"> erstelle die Aufgabe {speech} [in]</ListenFor>
+            <Feedback> Die Aufgabe {speech} wird erstellt </Feedback>
+            <VoiceCommandService Target="VoiceCommandBackgroundService"/>
+        </Command>
+
+        <!--<Command Name="howManyTasks">
+      <Example> Combien ai-je de tâches pour aujourd'hui ?</Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> combien de tâches aujourd'hui</ListenFor>
+      <Feedback> Recherche de vos tâches</Feedback>
+      <VoiceCommandService Target="VoiceCommandBackgroundService"/>
+    </Command>-->
+
+        <PhraseList Label="folder">
+            <Item>arbeit</Item>
+        </PhraseList>
+        <PhraseList Label="view">
+            <Item>heute</Item>
+        </PhraseList>
+        <PhraseList Label="smartview">
+            <Item>automatischeListe</Item>
+        </PhraseList>
+        <PhraseList Label="context">
+            <Item>telefon</Item>
+        </PhraseList>
+        <PhraseList Label="tag">
+            <Item>tag</Item>
+        </PhraseList>
+
+        <PhraseTopic Label="speech" Scenario="Natural Language"></PhraseTopic>
+
+    </CommandSet>
 
 </VoiceCommands>
